@@ -37,7 +37,7 @@ def gen_instance_hv_map(ann, crop_shape):
 
     inst_list = list(np.unique(crop_ann))
     if 0 in inst_list:
-    inst_list.remove(0)  # 0 is background
+        inst_list.remove(0)  # 0 is background
     for inst_id in inst_list:
         inst_map = np.array(fixed_ann == inst_id, np.uint8)
         inst_box = get_bounding_box(inst_map)
